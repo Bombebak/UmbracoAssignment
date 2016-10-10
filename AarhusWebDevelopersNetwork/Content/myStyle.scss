@@ -1,0 +1,546 @@
+﻿
+
+$primary-color: #F15F14;
+$background_primary-color: #F48044;
+
+/*------------------------ misc begin ------------------------ */
+
+.banner {
+    margin-left: -32px;
+    padding-left: 32px;
+}
+
+.banner {
+    -webkit-box-shadow: 2px 2px 2px #777;
+    -moz-box-shadow: 2px 2px 2px #777;
+    box-shadow: 2px 2px 2px #777;
+    background-color: $background_primary-color;
+    color: #fff;
+    font-size: 1.25em;
+    font-weight: 600;
+    letter-spacing: 0;
+    margin-bottom: 1em;
+    overflow: visible;
+    padding: 5px 15px 5px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.articleDetails {
+    h2 {
+        margin-left: -32px;
+        padding-left: 32px;
+    }
+    h2 {
+        -webkit-box-shadow: 2px 2px 2px #777;
+        -moz-box-shadow: 2px 2px 2px #777;
+        box-shadow: 2px 2px 2px #777;
+        background-color: $background_primary-color;
+        color: #fff;
+        font-size: 1.40em;
+        font-weight: 600;
+        letter-spacing: 0;
+        margin-bottom: 1em;
+        overflow: visible;
+        padding: 5px 15px 5px;
+        position: relative;
+        text-transform: uppercase;
+         a {
+        color: white;
+    }
+
+    a:hover {
+        background-color: $primary-color;
+        color: white;
+    }
+    }
+}
+
+.homepageNews {
+    table th {
+        margin-left: -32px;
+        padding-left: 32px;
+    }
+
+    th {
+        -webkit-box-shadow: 2px 2px 2px #777;
+        -moz-box-shadow: 2px 2px 2px #777;
+        box-shadow: 2px 2px 2px #777;
+        background-color: $background_primary-color;
+        color: #fff;
+        font-size: 1.40em;
+        font-weight: 600;
+        letter-spacing: 0;
+        margin-bottom: 1em;
+        overflow: visible;
+        padding: 5px 15px 5px;
+        position: relative;
+        text-transform: uppercase;
+    }
+
+    a {
+        color: white;
+    }
+
+    a:hover {
+        background-color: $primary-color;
+        color: white;
+    }
+
+}
+
+.cusBtn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+}
+ 
+.cusBtn:focus, .cusBtn:active:focus, .cusBtn.active:focus {
+    outline: 0 none;
+}
+ 
+.cusBtn-primary {
+    background: $background_primary-color;
+    color: #ffffff;
+    width: auto;
+    height: auto;
+    padding: 10px;
+}
+ 
+.cusBtn-primary:hover, .cusBtn-primary:focus, .cusBtn-primary:active, .cusBtn-primary.active, .open > .dropdown-toggle.cusBtn-primary {
+    background: $primary-color;
+}
+ 
+.cusBtn-primary:active, .cusBtn-primary.active {
+    background: $primary-color;
+    box-shadow: none;
+}
+
+
+
+
+
+/*------------------------ misc end ------------------------ */
+
+/*------------------------ Navbar begin ------------------------ */
+.cusNav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.cusNav > li {
+    position: relative;
+    display: block;
+}
+
+.cusNav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    color: white;
+}
+
+.cusNav > li > a:hover,
+.cusNav > li > a:focus {
+    text-decoration: none;
+    background-color: #eee;
+}
+
+.cusNav > li.disabled > a {
+    color: #777;
+}
+
+.cusNav > li.disabled > a:hover,
+.cusNav > li.disabled > a:focus {
+    color: #777;
+    text-decoration: none;
+    cursor: not-allowed;
+    background-color: transparent;
+}
+
+.cusNav .open > a,
+.cusNav .open > a:hover,
+.cusNav .open > a:focus {
+    background-color: #eee;
+    border-color: #337ab7;
+}
+
+.cusNav .nav-divider {
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+
+.cusNav > li > a > img {
+    max-width: none;
+}
+
+.cusNavbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+}
+
+@media (min-width: 768px) {
+    .cusNavbar {
+        border-radius: 4px;
+    }
+}
+
+@media (min-width: 768px) {
+    .cusNavbar-header {
+        float: left;
+    }
+}
+
+.cusNavbar-collapse {
+    padding-right: 15px;
+    padding-left: 15px;
+    overflow-x: visible;
+    -webkit-overflow-scrolling: touch;
+    border-top: 1px solid transparent;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+}
+
+.cusNavbar-collapse.in {
+    overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+    .cusNavbar-collapse {
+        width: auto;
+        border-top: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .cusNavbar-collapse.collapse {
+        display: block !important;
+        height: auto !important;
+        padding-bottom: 0;
+        overflow: visible !important;
+    }
+
+    .cusNavbar-collapse.in {
+        overflow-y: visible;
+    }
+}
+
+.cusNavbar-right .dropdown-menu {
+    right: 0;
+    left: auto;
+}
+
+.cusNavbar-left .dropdown-menu {
+    right: auto;
+    left: 0;
+}
+
+.container > .cusNavbar-header,
+.container-fluid > .cusNavbar-header,
+.container > .cusNavbar-collapse,
+.container-fluid > .cusNavbar-collapse {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+@media (min-width: 768px) {
+    .container > .cusNavbar-header,
+    .container-fluid > .cusNavbar-header,
+    .container > .cusNavbar-collapse,
+    .container-fluid > .cusNavbar-collapse {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+.cusNavbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.cusNavbar-brand:hover,
+.cusNavbar-brand:focus {
+    text-decoration: none;
+}
+
+.cusNavbar-brand > img {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .cusNavbar > .container .cusNavbar-brand,
+    .cusNavbar > .container-fluid .cusNavbar-brand {
+        margin-left: -15px;
+    }
+}
+
+.cusNavbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.cusNavbar-toggle:focus {
+    outline: 0;
+}
+
+.cusNavbar-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+}
+
+.cusNavbar-toggle .icon-bar + .icon-bar {
+    margin-top: 4px;
+}
+
+@media (min-width: 768px) {
+    .cusNavbar-toggle {
+        display: none;
+    }
+}
+
+.cusNavbar-nav {
+    margin: 7.5px -15px;
+}
+
+.cusNavbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
+}
+
+@media (max-width: 767px) {
+    .cusNavbar-nav .open .dropdown-menu {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: #F15F14;
+        border: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .cusNavbar-nav .open .dropdown-menu > li > a,
+    .cusNavbar-nav .open .dropdown-menu .dropdown-header {
+        padding: 5px 15px 5px 25px;
+    }
+
+    .cusNavbar-nav .open .dropdown-menu > li > a {
+        line-height: 20px;
+    }
+
+    .cusNavbar-nav .open .dropdown-menu > li > a:hover,
+    .cusNavbar-nav .open .dropdown-menu > li > a:focus {
+        background-image: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .cusNavbar-nav {
+        float: left;
+        margin: 0;
+    }
+
+    .cusNavbar-nav > li {
+        float: left;
+    }
+
+    .cusNavbar-nav > li > a {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+.cusNavbar-btn {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.cusNavbar-btn.btn-sm {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cusNavbar-btn.btn-xs {
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+.cusNavbar-text {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+    .cusNavbar-text {
+        float: left;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    .cusNavbar-left {
+        float: left !important;
+    }
+
+    .cusNavbar-right {
+        float: right !important;
+        margin-right: -15px;
+    }
+
+    .cusNavbar-right ~ .cusNavbar-right {
+        margin-right: 0;
+    }
+}
+
+
+
+/*Navbarform*/
+
+.cusNavbar-default {
+    background-color: #F48044;
+    border-color: #636363;
+}
+
+.cusNavbar-default .cusNavbar-brand {
+    color: #777;
+}
+
+.cusNavbar-default .cusNavbar-brand:hover,
+.cusNavbar-default .cusNavbar-brand:focus {
+    color: #5e5e5e;
+    background-color: #F15F14;
+}
+
+.cusNavbar-default .cusNavbar-text {
+    color: #777;
+}
+
+.cusNavbar-default .cusNavbar-nav > li > a {
+    color: white;
+}
+
+.cusNavbar-default .cusNavbar-nav > li > a:hover,
+.cusNavbar-default .cusNavbar-nav > li > a:focus {
+    color: white;
+    background-color: #F15F14;
+}
+
+.cusNavbar-default .cusNavbar-nav > .active > a,
+.cusNavbar-default .cusNavbar-nav > .active > a:hover,
+.cusNavbar-default .cusNavbar-nav > .active > a:focus {
+    color: white;
+    background-color: #F15F14;
+}
+
+.cusNavbar-default .cusNavbar-nav > .disabled > a,
+.cusNavbar-default .cusNavbar-nav > .disabled > a:hover,
+.cusNavbar-default .cusNavbar-nav > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+}
+
+.cusNavbar-default .cusNavbar-toggle {
+    border-color: #ddd;
+}
+
+.cusNavbar-default .cusNavbar-toggle:hover,
+.cusNavbar-default .cusNavbar-toggle:focus {
+    background-color: #F15F14;
+}
+
+.cusNavbar-default .cusNavbar-toggle .icon-bar {
+    background-color: #888;
+}
+
+.cusNavbar-default .cusNavbar-collapse,
+.cusNavbar-default .cusNavbar-form {
+    border-color: #e7e7e7;
+}
+
+.cusNavbar-default .cusNavbar-nav > .open > a,
+.cusNavbar-default .cusNavbar-nav > .open > a:hover,
+.cusNavbar-default .cusNavbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #F15F14;
+}
+
+@media (max-width: 767px) {
+    .cusNavbar-default .cusNavbar-nav .open .dropdown-menu > li > a {
+        color: #777;
+    }
+
+    .cusNavbar-default .cusNavbar-nav .open .dropdown-menu > li > a:hover,
+    .cusNavbar-default .cusNavbar-nav .open .dropdown-menu > li > a:focus {
+        color: #333;
+        background-color: #F15F14;
+    }
+
+    .cusNavbar-default .cusNavbar-nav .open .dropdown-menu > .active > a,
+    .cusNavbar-default .cusNavbar-nav .open .dropdown-menu > .active > a:hover,
+    .cusNavbar-default .cusNavbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #555;
+        background-color: #e7e7e7;
+    }
+
+    .cusNavbar-default .cusNavbar-nav .open .dropdown-menu > .disabled > a,
+    .cusNavbar-default .cusNavbar-nav .open .dropdown-menu > .disabled > a:hover,
+    .cusNavbar-default .cusNavbar-nav .open .dropdown-menu > .disabled > a:focus {
+        color: #ccc;
+        background-color: transparent;
+    }
+}
+
+.cusNavbar-default .cusNavbar-link {
+    color: #777;
+}
+
+.cusNavbar-default .cusNavbar-link:hover {
+    color: #333;
+}
+
+.cusNavbar-default .btn-link {
+    color: #777;
+}
+
+.cusNavbar-default .btn-link:hover,
+.cusNavbar-default .btn-link:focus {
+    color: #333;
+}
+
+.cusNavbar-default .btn-link[disabled]:hover,
+fieldset[disabled] .cusNavbar-default .btn-link:hover,
+.cusNavbar-default .btn-link[disabled]:focus,
+fieldset[disabled] .cusNavbar-default .btn-link:focus {
+    color: #ccc;
+}
+/*------------------------ Navbar end ------------------------ */
+
+
+.customizedFooter {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

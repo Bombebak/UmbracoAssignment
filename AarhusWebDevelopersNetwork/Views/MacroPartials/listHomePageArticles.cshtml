@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+@{ var articles = Umbraco.Content(1083);}
+
+@foreach (var child in articles.Children.OrderBy("CreateDate").Take(3)) 
+{
+	<div>
+		<table class="table">
+		<tr>
+		<th colspan="2"><a href="@child.Url"><h4>@child.articleItemTitle</h4></a></th>
+		</tr>
+		<tr>
+		<td><img height="150px;" width="150px;" class="img-resonsive" src="@child.articleItemImage"/></td>
+			<td>@Umbraco.Truncate(@child.articleItemContent,700)</td>
+		</tr>
+		</table>
+		</div>
+}

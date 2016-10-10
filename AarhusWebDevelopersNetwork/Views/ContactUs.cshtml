@@ -1,0 +1,10 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+    @{
+    Layout = "Master.cshtml";
+    }
+
+    <div>		
+		<h2 class="banner">Contact us</h2>
+        @Html.Action("Index", "ContactFormSurface")
+    </div>

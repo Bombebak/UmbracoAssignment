@@ -1,0 +1,76 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+	@using System.Web.Mvc.Html
+@using ClientDependency.Core.Mvc
+@using Umbraco.Web
+@using Umbraco.Web.Models
+@using Umbraco.Web.Controllers
+@{ var	root = CurrentPage.AncestorOrSelf(1);}
+@{ var projects = Umbraco.Content(1090);}
+@{
+	var loginStatusModel = Members.GetCurrentLoginStatus();
+
+	Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+    Html.RequiresJs("/umbraco_client/ui/jquery.js");
+    Html.RequiresJs("/umbraco_client/Application/JQuery/jquery.validate.min.js");
+    Html.RequiresJs("/umbraco_client/Application/JQuery/jquery.validate.unobtrusive.min.js");
+
+		var logoutModel = new PostRedirectModel();
+		logoutModel.RedirectUrl = "/";
+	}
+
+<ul class="cusNav cusNavbar-nav">
+    <li class="@(CurrentPage.Name == root.Name ? " active" :
+        null)">
+        <a href="/">@root.Name</a>
+    </li>
+
+    @foreach (var menuItem in root.Children.Where("Visible")) {
+			var isProtected = umbraco.library.IsProtected(menuItem.id, menuItem.path); 
+			var loginAccess = umbraco.library.IsProtected(menuItem.id, menuItem.path)
+							&& umbraco.library.HasAccess(menuItem.id, menuItem.path);
+		if (!isProtected || loginAccess) {
+    <li class="@(menuItem.IsAncestorOrSelf(CurrentPage) ? " active" :
+        null)">
+        <a href="@menuItem.Url">@menuItem.Name</a>
+    </li>
+		}
+	}
+	
+
+
+	<li class="dropdown">
+        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Our projects<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+			@foreach (var child in projects.Children.OrderBy("CreateDate").Where("projectItemStatus.Contains(\"Completed\")")) {
+            var isProtected = umbraco.library.IsProtected(child.id, child.path); 
+			var loginAccess = umbraco.library.IsProtected(child.id, child.path)
+							&& umbraco.library.HasAccess(child.id, child.path);
+				if (!isProtected || loginAccess) {					
+            <li><a href="@child.Url">@child.Name</a></li>
+				}
+            }
+
+        </ul>
+    </li>
+	
+    
+</ul>
+			@Html.RenderJsHere()
+<ul class="cusNav cusNavbar-nav cusNavbar-right">
+
+    @if (loginStatusModel.IsLoggedIn) {
+
+    <li>Welcome, @loginStatusModel.Name!</li>
+
+    using (Html.BeginUmbracoForm<UmbLoginStatusController>("HandleLogout")){
+        <button class"btn btn-default">Logout</button>
+
+        @Html.HiddenFor(m => logoutModel.RedirectUrl)
+        }
+	}
+        else {
+        <li><a href="/login">Login</a></li>
+        }
+
+</ul>	

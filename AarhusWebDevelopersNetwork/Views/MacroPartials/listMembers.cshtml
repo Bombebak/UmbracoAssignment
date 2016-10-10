@@ -1,0 +1,67 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+	@{
+var memberService =
+ApplicationContext.Current.Services.MemberService;
+
+var activeMembers = memberService.GetMembersByGroup("Active");
+var prostectMembers = memberService.GetMembersByGroup("Prospect");
+		
+}
+
+	<h2>Active members</h2>
+	<table class="table table-hover">
+		<thead>
+		<tr>
+		<th>Picture</th>
+		<th>Firstname</th>
+		<th>Lastname</th>
+		<th>Address</th>
+		<th>Zip</th>
+		<th>City</th>
+		<th>Mobile</th>
+		</tr>
+		</thead>
+		@foreach (var activeMember in activeMembers) 
+{
+		<tbody>
+		<tr>
+			@{string fullPath = activeMember.GetValue("memberPhoto").ToString();
+        string[] substrings = fullPath.Split(',');
+        string srcString = substrings[2];
+        string[] srcSubStrings = srcString.Split(':');
+        string srcPath = srcSubStrings[1].Replace("\"", "");
+        srcPath = srcPath.Replace("}", "");}
+			<td><img width="75px;" height="75px;" class="img-resonsive" src="@srcPath"/></td>	
+			<td>@activeMember.GetValue("memberFirstname")</td>
+			  <td>@activeMember.GetValue("memberLastname")</td>
+			  <td>@activeMember.GetValue("memberAddress")</td>
+			  <td>@activeMember.GetValue("memberZip")</td>
+			  <td>@activeMember.GetValue("memberCity")</td>
+			  <td>@activeMember.GetValue("memberMobile")</td>
+		</tr>
+		</tbody>
+			}
+		</table>
+			
+			
+<h2>Prospect members</h2>
+<table class="table table-hover">
+		<thead>
+		<tr>
+		<th>Firstname</th>
+		<th>Lastname</th>
+		<th>Mobile</th>
+		</tr>
+		</thead>
+		@foreach (var prospectMember in prostectMembers) 
+{
+		<tbody>
+		<tr>
+		<td>@prospectMember.GetValue("memberFirstName")</td>
+			  <td>@prospectMember.GetValue("memberLastName")</td>
+			  <td>@prospectMember.GetValue("memberMobile")</td>
+		</tr>
+		</tbody>
+			}
+		</table>

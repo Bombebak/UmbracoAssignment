@@ -1,0 +1,78 @@
+﻿@model AarhusWebDevelopersNetwork.Models.ViewModels.ContactFormViewModel
+	@{
+	Layout = null;
+	}
+<link href="~/Content/validationStyle.css" rel="stylesheet" type="text/css" />
+<body>
+
+    <div class="row">
+        @using (Html.BeginUmbracoForm("ContactUs", "ContactFormSurFace", new object {},
+        new {@class = "form-horizontal"}))
+        {
+        if (TempData["TempContactMsg"] != null)
+        {
+        @Html.Raw(TempData["TempContactMsg"])
+        }
+        @Html.ValidationSummary(true)
+        <div class="col-md-12">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Name, new {@class = "col-sm-2 control-label"})
+                <div class="col-sm-4">
+                    @Html.TextBoxFor(m => m.Name, new {@class = "form-control", placeholder = "Your name"})
+                </div>
+                @if (@Html.ValidationMessageFor(m => m.Name) != null) {
+                <div class="arrow_box col-sm-4">
+
+                    @Html.ValidationMessageFor(m => m.Name)
+                </div>
+                }
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email, new {@class = "col-sm-2 control-label"})
+                <div class="col-sm-4">
+                    @Html.TextBoxFor(m => m.Email, new {@class = "form-control", placeholder = "Your email"})
+                </div>
+                @if (@Html.ValidationMessageFor(m => m.Email) != null) {
+                <div class="arrow_box col-sm-4">
+
+                    @Html.ValidationMessageFor(m => m.Email)
+                </div>
+                }
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Subject, new {@class = "col-sm-2 control-label"})
+                <div class="col-sm-4">
+                    @Html.TextBoxFor(m => m.Subject, new {@class = "form-control", placeholder = "The subject"})
+                </div>
+                @if (@Html.ValidationMessageFor(m => m.Subject) != null) {
+                <div class="arrow_box col-sm-4">
+
+                    @Html.ValidationMessageFor(m => m.Subject)
+                </div>
+                }
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Message, new {@class = "col-sm-2 control-label"})
+                <div class="col-sm-4">
+                    @Html.TextAreaFor(m => m.Message, new {@class = "form-control", placeholder = "The message"})
+                </div>
+                @if (@Html.ValidationMessageFor(m => m.Message) != null) {
+                <div class="arrow_box col-sm-4">
+
+                    @Html.ValidationMessageFor(m => m.Message)
+                </div>
+                }
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-6">
+                    <button id="contact-submit" type="submit" class="cusBtn cusBtn-primary input-medium-pull-left">Send</button>
+                </div>
+            </div>
+        </div>
+
+
+        }
+    </div>
+
+</body>
