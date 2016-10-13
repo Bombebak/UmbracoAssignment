@@ -1,16 +1,19 @@
 ﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
 
-@{ var projects = Umbraco.Content(1074);}
+@{ var projects = Umbraco.Content(1090);}
 <div class="table-reponsive">
 <table class="table">	
-	@foreach (var child in projects.Children.OrderBy("CreateDate").Where("projectStatus.Contains(\"Completed\")").Take(2)) {
+	@foreach (var child in projects.Children.OrderBy("CreateDate").Take(2)) {
 	<tr>
-		<td rowspan="2"><img class="img-resonsive" src="@child.projectImage"/></td>
-	<td><h4>@child.Name</h4></td>
-	</tr>
-	<tr>
-	<td>@Umbraco.Truncate(@child.projectContents,200)</td>
-	</tr>
+		<th colspan="2"><a href="@child.Url"><h4>@child.Name</h4></a></th>
+		</tr>
+		<tr>
+			
+			<td><img height="150px;" width="150px;" class="img-resonsive" alt="@child.Name" src=""/></td>
+	
+		
+		<td>@Umbraco.Truncate(@child.projectItemBodyText,700)</td>
+		</tr>
 	}
 	</table>
 </div>
